@@ -14,5 +14,6 @@ jobs:
         dst: gitee/piecezyz
         dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
         dst_token:  ${{ secrets.GITEE_TOKEN }}
+        static_list: "zyztest"
         debug: true
         force_update: true
