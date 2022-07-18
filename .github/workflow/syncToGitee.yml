@@ -1,15 +1,18 @@
 on:
-  push:
-    # delete this item if you don't want to trigger this workflow when modify this repo
-    branches: master
+  pull_request:
+    paths:
+    - '.github/workflows/gitee-repos-mirror.yml'
+    - '!.github/workflows/spark-sync.yaml'
+    # Runs at every pull requests submitted in master branch 
+    branches: [ master ]
 
-name: Mirror GitHub Auto Queried Repos to Gitee
+name: Mirrorzyz
 jobs:
   run:
-    name: Sync-GitHub-to-Gitee
+    name: mzyz
     runs-on: ubuntu-latest
     steps:
-    - name: Mirror the Github repos to Gitee.
+    - name: mzyz1
       uses: Yikun/hub-mirror-action@master
       with:
         src: github/zyztest
