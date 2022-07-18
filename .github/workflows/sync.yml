@@ -1,15 +1,12 @@
 on:
-  pull_request:
-    # Runs at every pull requests submitted in master branch 
-    branches: [ main ]
+  push:
+    branches:
+      - main
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-
     - name: Mirror the Github organization repos to Gitee.
       uses: Yikun/hub-mirror-action@master
       with:
