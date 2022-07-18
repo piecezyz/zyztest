@@ -4,7 +4,7 @@ on:
     - '.github/workflows/gitee-repos-mirror.yml'
     - '!.github/workflows/spark-sync.yaml'
     # Runs at every pull requests submitted in master branch 
-    branches: [ master ]
+    branches: [ main ]
 
 name: Mirrorzyz
 jobs:
