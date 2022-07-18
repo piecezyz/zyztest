@@ -8,9 +8,10 @@ on:
 
 name: Mirrorzyz
 jobs:
-  run:
-    name: mzyz
+  build:
+
     runs-on: ubuntu-latest
+
     steps:
     - name: mzyz1
       uses: Yikun/hub-mirror-action@master
@@ -19,5 +20,5 @@ jobs:
         dst: gitee/zyztest
         dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
         dst_token: ${{ secrets.GITEE_TOKEN }}
-        mappings: ".github=>github"
         force_update: true
+        debug: true
