@@ -1,18 +1,28 @@
-name: syncToGitee
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    # Runs at every pull requests submitted in master branch 
+    branches: [ main ]
+
 jobs:
-  repo-sync:
+  build:
+
     runs-on: ubuntu-latest
+
     steps:
-      - name: Mirror the Github organization repos to Gitee.
-        uses: Yikun/hub-mirror-action@master
-        with:
-          src: 'github/zyztest'
-          dst: 'gitee/zyztest'
-          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-          dst_token:  ${{ secrets.GITEE_TOKEN }}
-          force_update: true
-          debug: true
+
+    - name: Mirror the Github organization repos to Gitee.
+      uses: Yikun/hub-mirror-action@v1.0
+      with:
+        src: github/piecezyz
+        dst: gitee/piecezyz
+        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+        dst_token:  ${{ secrets.GITEE_TOKEN }}
+        account_type: org
+        timeout: 600
+        debug: true
+        force_update: true
+        black_list: "mysql-server,kunpeng-mpam,hadoop,kunpengcompute.github.io,spark,spark-website,server,postgres,ceph-global-cache-adaptor"
+    - name: Debug repo owner
+      run: |
+        echo ${{ github.repository_owner }}
+        echo ${{ github.actor }}
