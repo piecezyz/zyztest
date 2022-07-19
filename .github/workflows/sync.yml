@@ -2,8 +2,7 @@ name: Sync
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches: [*]
 
 jobs:
   build:
