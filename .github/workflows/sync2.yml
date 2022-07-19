@@ -16,11 +16,6 @@ jobs:
         with:
           source-repo: git@github.com:piecezyz/zyztest.git
           destination-repo: git@gitee.com:zhou-yuanzhi/zyztest.git
-
-      - name: Build Gitee Pages
-        uses: yanglbme/gitee-pages-action@main
-        with:
-          gitee-username: zhou-yuanzhi
-          gitee-password: ${{ secrets.GITEE_PASSWORD }}
-          gitee-repo: zhou-yuanzhi/zyztest.git
-          branch: main
+	  cache_path: /github/workspace/hub-mirror-cache
+	  force_update: true
+	  debug: true
