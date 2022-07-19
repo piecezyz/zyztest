@@ -16,6 +16,5 @@ jobs:
         with:
           source-repo: git@github.com:piecezyz/zyztest.git
           destination-repo: git@gitee.com:zhou-yuanzhi/zyztest.git
-	  cache_path: /github/workspace/hub-mirror-cache
 	  force_update: true
 	  debug: true
