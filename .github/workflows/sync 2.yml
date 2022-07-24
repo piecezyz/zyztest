@@ -9,8 +9,6 @@ jobs:
     steps:
       - name: Sync to Gitee
         uses: Yikun/hub-mirror-action@master
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
         with:
           src: github/piecezyz
           dst: gitee/zhou-yuanzhi
